@@ -1,0 +1,60 @@
+"use strict"
+
+const peoples = [
+  {
+    name: "John Doe",
+    age: 30,
+    city: "New York",
+    profession: "Software Engineer",
+  },
+
+  {
+    name: "Emily Brown",
+    age: 28,
+    city: "San Francisco",
+    profession: "Marketing Manager",
+  },
+  {
+    name: "David Lee",
+    age: 32,
+    city: "Houston",
+    profession: "Financial Analyst",
+  },
+  {
+    name: "John Doe",
+    age: 30,
+    city: "New York",
+    profession: "Software Engineer",
+  },
+  {
+    name: "age",
+    age: 30,
+    city: "New York",
+    profession: "Software Engineer",
+  },
+];
+
+// using finIndex method
+function duplicateItems(inputArray) {
+  return inputArray.filter((obj, index, arr) => {
+    return arr.findIndex((item) => item.age === obj.age) === index;
+  });
+}
+const dulpicate = duplicateItems(peoples);
+console.log(dulpicate, "duplicateItems");
+
+//using find method
+function dulpicates(inputList) {
+  let outputArray = [];
+  for (let i = 0; i < inputList.length; i++) {
+    if (outputArray.find((obj) => obj.name == inputList[i].name)) {
+      continue;
+    } else {
+      outputArray.push(inputList[i]);
+    }
+  }
+  return outputArray;
+}
+
+const dulpicatedItems = dulpicates(peoples);
+console.log(dulpicatedItems, "duplicated");
